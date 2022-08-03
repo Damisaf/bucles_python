@@ -4,7 +4,7 @@
 # Autor: Inove Coding School
 # Version: 2.0
 
-# NOTA: 
+# NOTA:
 # Estos ejercicios son de mayor dificultad que los de clase y práctica.
 # Están pensados para aquellos con conocimientos previo o que dispongan
 # de mucho más tiempo para abordar estos temas por su cuenta.
@@ -30,12 +30,23 @@ print('Comenzamos a ponernos serios!')
 # inicio = ....
 # fin = ....
 
+inicio = int(input('Ingrese el primer número de la secuencia\n'))
+fin = int(input('Ingrese el último número de la secuencia\n'))
+
 # cantidad_numeros ....
 # sumatoria ....
+cantidad_numeros = fin - inicio + 1
+sumatoria = 0
 
 # bucle.....
+for i in range(inicio, fin+1):
+    sumatoria += i
 
 # Al terminar el bucle calcular el promedio como:
 # promedio = sumatoria / cantidad_numeros
+promedio = sumatoria / cantidad_numeros
 
 # Imprimir resultado en pantalla
+print("La cantidad de numeros es: ", cantidad_numeros)
+print("La sumatoria de los numeros es: ", sumatoria)
+print("el promedio es: ", promedio)

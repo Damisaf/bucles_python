@@ -4,7 +4,7 @@
 # Autor: Inove Coding School
 # Version: 2.0
 
-# NOTA: 
+# NOTA:
 # Estos ejercicios son de mayor dificultad que los de clase y práctica.
 # Están pensados para aquellos con conocimientos previo o que dispongan
 # de mucho más tiempo para abordar estos temas por su cuenta.
@@ -50,6 +50,18 @@ temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el pr
 temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
 
 # Colocar el bucle aqui......
+for temperatura in temp_dataloger:
+    if (temperatura_max is None) or (temperatura > temperatura_max):
+        temperatura_max = temperatura
+    if (temperatura_min is None) or (temperatura < temperatura_min):
+        temperatura_min = temperatura
+    temperatura_sumatoria += temperatura
+    temperatura_len += 1
+temperatura_promedio = temperatura_sumatoria / temperatura_len
+print("La temperatura maxima es: ", temperatura_max)
+print("la temperatura minima es: ", temperatura_min)
+print("la temperatura promedio es: ", temperatura_promedio)
+
 
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
@@ -63,6 +75,13 @@ temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la
 # Corroboren los resultados de temperatura_sumatoria
 # usando la función "sum"
 # función "sum" --> https://www.w3schools.com/python/ref_func_sum.asp
+
+print("calculado con la funcion max: ", max(temp_dataloger))
+print("calculado con la funcion min: ", min(temp_dataloger))
+print()
+print("sumatoria sin la funcion sum: ", temperatura_sumatoria)
+print("sumatoria con la funcion sum: ", sum(temp_dataloger))
+
 
 '''
 Una vez que tengamos nuestros valores correctamente calculados debemos
@@ -83,3 +102,11 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
 # Debe utilizar temperatura_max y temperatura_min para definirlo
+
+minimas = [19, 11, 8, 10]
+maximas = [28, 20, 14, 24]
+epoca = ["verano", "otoño", "invierno", "primavera"]
+
+for i in range(len(minimas)):
+    if temperatura_min >= minimas[i] and temperatura_max <= maximas[i]:
+        print("la epoca del año es: ", epoca[i])
